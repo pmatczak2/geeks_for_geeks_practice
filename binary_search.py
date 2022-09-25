@@ -1,25 +1,19 @@
-def sorting(arr, left, right, x):
-    while left <= right:
+def sorting(array, left_index, right_index, x):
 
-        mid_point = left + right - 1 // 2
+    while left_index <= right_index:
+        middle = left_index + right_index - 1 // 2
 
-        if arr[mid_point] == x:
-            return mid_point
+        if array[middle] == x:
+            return x
 
-        elif arr[mid_point] < x:
-            left = mid_point + 1
+        elif array[middle] < x:
+            left_index = middle + 1
 
         else:
-            right = mid_point - 1
+            right_index = middle - 1
+
     return -1
-
 arr = [1,2,3,4]
-x = 10
+x = 8
 
-result = sorting(arr, 0, len(arr)-1, x)
-
-if result != -1:
-    print(f"Element is in idex {result}")
-else:
-    print("Elemnt is not present")
-
+print(sorting(arr, 0, len(arr) - 1, x))
