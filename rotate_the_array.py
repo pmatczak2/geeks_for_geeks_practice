@@ -8,12 +8,10 @@
 
 def rotate_array(L, d):
     k = L.index(d)
-    new_lis = L[k+1:]+L[0:k+1]
-    return new_lis
+    new_list = L[k+1:]+L[:k+1]
+    return new_list
 
-
-
-arr = [1,2,3,4,5,6,7,8,9]
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 d = 3
 arr = rotate_array(arr, d)
 for i in arr:
