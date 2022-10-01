@@ -16,24 +16,22 @@ def min_jumps(arr, n):
     if arr[0] == 0:
         return -1
 
-    max_reach = arr[0]
+    max_range = arr[0]
     step = arr[0]
-    jump = 1
+    jump = arr[0]
 
     for i in range(1, n):
         if i == n-1:
             return jump
 
-        max_reach = max(max_reach, i + arr[i])
+        max_range = max(max_range, i + arr[i])
         step -= 1
-
         if step == 0:
             jump += 1
+            step = max_range - i
 
-            if i >= max_reach:
-                return -1
-
-            step = max_reach - i
+        if i >= max_range:
+            return -1
     return -1
 
 arr = [1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]
