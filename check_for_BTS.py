@@ -19,3 +19,34 @@
 # the right subtree of root node contains node
 # with key greater than the root nodes key.
 # Hence, the tree is a BST.
+int_max = 123456789
+int_min = -123456789
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def is_bst(node):
+    return is_bst_unit(node, int_min, int_max)
+
+def is_bst_unit(node, mini, maxi):
+    if node is None:
+        return True
+
+    if node.data < mini or node.data > maxi:
+        return False
+
+    return is_bst_unit(node.left, mini, node.data - 1) and is_bst_unit(node.right, maxi, node.data + 1)
+
+if __name__ == "__main__":
+    root = Node(4)
+    root.left = Node(3)
+    root.left.left = Node(1)
+    root.left.left = Node(2)
+
+    if is_bst(root):
+        print("Is BST")
+    else:
+        print("Is not BST")
