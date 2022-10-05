@@ -23,6 +23,7 @@ int_max = 123456789
 int_min = -123456789
 
 class Node:
+
     def __init__(self, data):
         self.data = data
         self.left = None
@@ -41,11 +42,10 @@ def is_bst_unit(node, mini, maxi):
     return is_bst_unit(node.left, mini, node.data) and is_bst_unit(node.right, node.data, maxi)
 
 if __name__ == "__main__":
-    root = Node(14)
-    root.left = Node(12)
-    root.right = Node(15)
-    root.left.left = Node(11)
-    root.left.right = Node(13)
+    root = Node(4)
+    root.left = Node(2)
+    root.right = Node(5)
+
     if is_bst(root):
         print("Is BST")
     else:
