@@ -38,14 +38,14 @@ def is_bst_unit(node, mini, maxi):
     if node.data < mini or node.data > maxi:
         return False
 
-    return is_bst_unit(node.left, mini, node.data - 1) and is_bst_unit(node.right, maxi, node.data + 1)
+    return is_bst_unit(node.left, mini, node.data) and is_bst_unit(node.right, node.data, maxi)
 
 if __name__ == "__main__":
-    root = Node(4)
-    root.left = Node(3)
-    root.left.left = Node(1)
-    root.left.left = Node(2)
-
+    root = Node(14)
+    root.left = Node(12)
+    root.right = Node(15)
+    root.left.left = Node(11)
+    root.left.right = Node(13)
     if is_bst(root):
         print("Is BST")
     else:
