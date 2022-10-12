@@ -4,13 +4,12 @@
 # largest sum.
 
 def max_sub_array(nums):
-    partial_sum = nums[0]
-    global_max = nums[0]
+    partial_sum, global_sum = nums[0], nums[0]
     for i in range(1, len(nums)):
         partial_sum = max(partial_sum + nums[i], nums[i])
-        global_max = max(global_max, partial_sum)
-    return global_max
+        global_sum = global_sum, partial_sum
+    return global_sum
 
 array = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-
 print(max_sub_array(array))
+
