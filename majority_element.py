@@ -12,6 +12,7 @@
 
 def majority_elements(nums):
     sums = {}
+
     for n in nums:
         if n not in sums:
             sums[n] = 1
@@ -20,6 +21,7 @@ def majority_elements(nums):
 
         if sums[n] > len(nums)/2:
             return n
+
 
 numbers = 3, 3, 4, 2, 4, 4, 2, 4, 4
 print(majority_elements(numbers))
