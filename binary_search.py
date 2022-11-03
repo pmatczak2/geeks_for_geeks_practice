@@ -27,10 +27,10 @@ def binary_search(array, left_index, right_index, x):
             right_index = middle - 1
 
     return -1
-arr = [2, 3, 4, 10, 40]
-x = 10
+arr = [2, 3, 4, 10, 40, 45]
+x = 45
 
-result = binary_search(arr, 0, len(arr) -1, x)
+result = binary_search(arr, 0, len(arr) - 1, x)
 
 if result != -1:
     print(f"Element is present at index {result}")
