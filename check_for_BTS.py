@@ -19,8 +19,8 @@
 # the right subtree of root node contains node
 # with key greater than the root nodes key.
 # Hence, the tree is a BST.
-int_max = 123456789
-int_min = -123456789
+int_max = 6
+int_min = 0
 
 class Node:
 
