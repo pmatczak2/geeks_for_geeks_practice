@@ -15,7 +15,6 @@ def sort_array(a, arr_size):
     mid = 0
 
     while mid <= high:
-
         if a[mid] == 0:
             a[low], a[mid] = a[mid], a[low]
             low += 1
@@ -28,7 +27,6 @@ def sort_array(a, arr_size):
             a[mid], a[high] = a[high], a[mid]
             high -= 1
     return a
-
 array = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]
 array_size = len(array)
 print(sort_array(array, array_size))
