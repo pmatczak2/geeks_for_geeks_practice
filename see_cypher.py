@@ -26,13 +26,14 @@ def cypher_decode(encoded_message):
 print(encoded_message)
 print(cypher_decode(encoded_message))
 
-def cypher(text, shift):
-    if type(text) != str:
-        return "the input is not a string"
-    else:
-        code = ""
-        for i in text:
-            code += chr(ord(i) + shift)
-        return code
-
-print(cypher("atack at done", 2))
+# def cypher(text, shift):
+#     if type(text) != str:
+#         return "the input is not a string"
+#     else:
+#         code = ""
+#         for i in text:
+#             code += chr(ord(i) + shift)
+#         return code
+#
+# print(cypher(message, 2))
+assert message == cypher_decode(cyper_encode(message))
