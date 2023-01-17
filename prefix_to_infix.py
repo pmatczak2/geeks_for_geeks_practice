@@ -1,5 +1,4 @@
 #  convert form prefix to infix ((a+b) * (c-d)) -> x + ab - cd
-from collections import deque
 
 # Convert from prefix to infix
 
@@ -11,6 +10,7 @@ from collections import deque
 #     create string "sub 1 op sub 2"
 #     add resulting string to stack
 
+from collections import deque
 
 def prefix_to_infix(expression):
     operators = ["^", "*", "/", "%", "+", "-"]
