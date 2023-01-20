@@ -3,13 +3,26 @@
 # Given an array arr[] of size N. The task is to find the sum of the contiguous subarray within a arr[] with the
 # largest sum.
 
-def max_sub_array(nums):
-    partial_sum, global_sum = nums[0], nums[0]
-    for i in range(1, len(nums)):
-        partial_sum = max(partial_sum + nums[i], nums[i])
-        global_sum = global_sum, partial_sum
-    return global_sum
+from sys import maxsize
 
-array = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-print(max_sub_array(array))
 
+def maxSubArraySum(a, size):
+    max_so_far = -maxsize - 1
+    max_ending_here = 0
+
+    for i in range(0, size):
+        max_ending_here = max_ending_here + a[i]
+        if (max_so_far < max_ending_here):
+            max_so_far = max_ending_here
+
+        if max_ending_here < 0:
+            max_ending_here = 0
+    return max_so_far
+
+
+# Driver function to check the above function
+
+
+a = [-2, -3, 4, -1, -2, 1, 5, -3]
+
+print("Maximum contiguous sum is", maxSubArraySum(a, len(a)))
