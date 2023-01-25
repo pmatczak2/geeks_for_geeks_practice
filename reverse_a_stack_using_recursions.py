@@ -21,7 +21,7 @@ class Stack:
         return self.items.pop()
 
     def display(self):
-        for data in reversed(self.items):
+        for data in self.items:
             print(data)
 
 
