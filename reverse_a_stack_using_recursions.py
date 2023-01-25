@@ -12,16 +12,18 @@ class Stack:
         self.items = []
 
     def is_empty(self):
-        return self.items ==[]
-    def push(self, item):
-        self.items.insert(0, item)
+        return self.items == []
+
+    def push(self, data):
+        self.items.append(data)
 
     def pop(self):
-        return self.items.pop(0)
+        return self.items.pop()
 
     def display(self):
         for data in reversed(self.items):
             print(data)
+
 
 def insert_at_bottom(s, data):
     if s.is_empty():
@@ -37,6 +39,7 @@ def reverse_stack(s):
         popped = s.pop()
         reverse_stack(s)
         insert_at_bottom(s, popped)
+
 
 s = Stack()
 data_list = [1, 5, 3, 2, 4]
