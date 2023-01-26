@@ -14,17 +14,17 @@
 
 def binary_search(array, left_index, right_index, x):
 
-    while left_index <= right_index:
-        middle = left_index + right_index - 1 // 2
+    if right_index >= left_index:
+        middle = left_index + (right_index-1) // 2
 
         if array[middle] == x:
-            return x
+            return middle
 
-        elif array[middle] < x:
-            left_index = middle + 1
+        elif array[middle] > x:
+            return binary_search(array, left_index, middle-1, x)
 
         else:
-            right_index = middle - 1
+            return binary_search(array, middle + 1, right_index, x)
 
     return -1
 arr = [2, 3, 4, 10, 40, 45]
